@@ -4,6 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbarr from './component/Navbarr';
 import Pub from './component/Pub';
 import Movieslist from './component/Movieslist';
+import { Route, Routes } from 'react-router-dom';
+import About from './component/About';
+import Contact from './component/Contact';
+import Footer from './component/Footer';
+import Trailer from './component/Trailer';
+
 
 function App() {
   const [movies,setmovies]= useState([{
@@ -115,13 +121,22 @@ function App() {
 const [text, settext] = useState("")
 const [rate, setrate] = useState(1)
   return (
-    <div className="App">
-      <Navbarr settext={settext} setrate={setrate}e/>
+    <div className="App" style={{background:"#f1f8f2"}}>
+ <Navbarr settext={settext} setrate={setrate}e/>
+ <iframe width="100%" height="700" src="https://www.youtube.com/embed/x5KQ6b4qJmc" 
+   title="YouTube video player" frameborder="0" 
+   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+   allowfullscreen style={{allow:"autoplay",marginTop:"39px"}}></iframe>
+ <Routes>
 
-      <Pub/>
-      <Movieslist movies={movies} setmovies={setmovies} text={text} rate={rate}/>
-    
-      
+  <Route path="/" element={<Movieslist movies={movies} setmovies={setmovies} text={text} rate={rate}/>} />
+  <Route path="/about" element={<About/> } />
+  <Route path="/contact" element={ <Contact/> } />
+  <Route path="/trailer/:name" element={<Trailer movies={movies}/> } />
+  <Route path="/pub" element={<Pub/> } />
+
+  </Routes>
+     <Footer/>
     </div>
   );
 }

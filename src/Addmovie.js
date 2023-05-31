@@ -20,7 +20,7 @@ function Addmovie({ movies , setmovies }) {
     };
     return (
     <div >
-    <Button variant="primary" style={{backgroundColor:"rgb(23, 180, 23)",color:"white",border:"none" ,borderRadius:"50%" }} onClick={handleShow} >
+    <Button variant="primary" style={{backgroundColor:"rgb(23, 180, 23)",color:"white",border:"none" ,borderRadius:"50%" , marginTop:"40px" }} onClick={handleShow}>
       +
     </Button>
 

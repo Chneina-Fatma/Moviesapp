@@ -1,20 +1,33 @@
 .container{
     display: flex;
     width: 100%;
-    margin: 80px;
+    margin: 10px;
     justify-content: space-around;
     flex-wrap: wrap;
 }
-.container  :hover{
-color: rgb(9, 9, 91);
-cursor: pointer;
+.box{
+    margin-top: 35px;
 }
 .add{
-    
+  
  justify-content:  center;
  display: flex;
  margin-top: 25px;
 }
 .Conta{
+    color: #f1f8f2;
+}
+.navi{
     color: white;
+}
+.card{
+    position: static !important;
+}
+.nav-link{
+    color:white !important
+} 
+.ReactStars{
+display: flex;
+text-align: center;
+justify-content: space-around;
 }

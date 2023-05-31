@@ -7,6 +7,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import ReactStars from "react-rating-stars-component";
+import { Link } from 'react-router-dom';
 
 
 
@@ -16,8 +17,8 @@ function Navbarr({settext,setrate}) {
 
         <Navbar bg="light" expand="lg" >
     <Container className='conta' fluid style={{backgroundColor:'rgb(99 108 83)', color:'white',
-    height:'100PX', position:"fixed" , marginTop:"40px" }}>
-      <Navbar.Brand href="#" style={{color:'white',}}>Movies App</Navbar.Brand>
+    height:'100PX', position:"fixed"  }}>
+      <Navbar.Brand href="#" style={{color:'white',textDecoration:"none"}}>Movies App</Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">
         <Nav
@@ -25,16 +26,16 @@ function Navbarr({settext,setrate}) {
           style={{ maxHeight: '100px'}}
           navbarScroll
         >
-          <Nav.Link href="#action1" style={{color:'white'}}>Movies</Nav.Link>
-          <Nav.Link href="#action2" style={{color:'white'}}>about</Nav.Link>
-          <NavDropdown title="Types" id="navbarScrollingDropdown" style={{color:'white'}} >
-            <NavDropdown.Item href="#action3" >Romantic</NavDropdown.Item>
-            <NavDropdown.Item href="#action4" >Action </NavDropdown.Item>
+          <Nav.Link href="#action1"><Link to="/"  style={{color:'white',textDecoration:"none"}}>Movies</Link></Nav.Link>
+          <Nav.Link href="#action2" ><Link to="/about" style={{color:'white', textDecoration:"none"}}>About</Link></Nav.Link>
+          <NavDropdown title="Types" id="navi" style={{color:'white',textDecoration:"none"}} >
+            <NavDropdown.Item href="#action3" ><Link style={{color:'black',textDecoration:"none"}} to="/romantic">Romantic</Link></NavDropdown.Item>
+            <NavDropdown.Item href="#action4" ><Link style={{color:'black',textDecoration:"none"}} to="/action">Action</Link> </NavDropdown.Item>
             <NavDropdown.Divider />
             
           </NavDropdown>
           <Nav.Link href="#action3" style={{color:'white'}}>
-            Contact
+           <Link style={{color:'white',textDecoration:"none"}}to="/contact">Contact</Link> 
           </Nav.Link>
         </Nav>
         <ReactStars 
